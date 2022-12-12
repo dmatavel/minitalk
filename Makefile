@@ -1,4 +1,3 @@
-LIBFT = libft
 SERVER = server
 SRC_PATH = src
 SRC_SERVER = $(shell find $(SRC_PATH) -name "server.c")
@@ -21,7 +20,8 @@ clean:
 	make -C $(LIBFT_PATH) clean
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(SERVER)
+	rm -f $(CLIENT)
 	rm -f $(LIBFT_PATH)$(INCLUDE)
 
 re: fclean all
