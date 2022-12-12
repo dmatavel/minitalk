@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 13:27:04 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/09/21 16:51:10 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:39:36 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <signal.h>
+# include <sys/types.h>
 
 /* standard libc remakes */
 # include "libft_ctype.h"
