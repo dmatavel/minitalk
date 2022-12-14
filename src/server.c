@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:29:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/12/14 10:01:04 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:58:21 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,34 @@ void	handler(int signum);
 int	main(void)
 {
 	pid_t	process_id;
-	
-	signal(SIGUSR1, handler);
 	process_id = getpid();
 	ft_printf("%d\n", process_id);
 	while (1)
-		sleep(1);
+	{
+		signal(SIGUSR1, handler);
+		signal(SIGUSR2, handler);
+		pause();
+	}
 	return (0);
 }
 
 void	handler(int signum)
 {
-	if (signum == SIGUSR1)
-		write(STDOUT_FILENO, "Hello, world\n", 13);
+	static int		i;
+	static	char	c;
+	
+	if (i < 8)
+	{
+		c = c << 1;		
+		if (signum == SIGUSR1)
+			c = c | 1;
+		i++;
+		if (i == 8)
+		{
+			ft_printf("%c", c);
+			i = 0;
+		}
+
+	}
 }
 
