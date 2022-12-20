@@ -6,11 +6,11 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:29:26 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/12/14 16:58:21 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/12/19 22:17:46 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/include/libft.h"
+#include "../include/libft/include/libft.h"
 
 void	handler(int signum);
 
