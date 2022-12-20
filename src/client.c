@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:36:07 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/12/19 22:32:55 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/12/20 18:01:33 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(int argc, char *argv[])
 {
 	int		serv_pid;
 
-	if (argc < 2)
+	if (argc != 3)
 	{
-		ft_printf("Please, insert Server's PID and a valid message.");
+		ft_printf("Please, insert Server's PID and a valid message.\n");
 		exit(EXIT_FAILURE);
 	}	
 	serv_pid = ft_atoi(argv[1]);
