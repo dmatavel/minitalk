@@ -1,30 +1,36 @@
-SERVER = server
-CLIENT = client
-SRC_PATH = src
-SRC_SERVER = $(shell find $(SRC_PATH) -name "server.c")
-SRC_CLIENT = $(shell find $(SRC_PATH) -name "client.c")
 NAME = minitalk
-OBJS = $(SRCS:.c=.o)
+SERVER = server
+SRC_SERVER = src/server.c
+OBJ_SERVER = $(SRC_SERVER:.c=.o)
+CLIENT = client
+SRC_CLIENT = src/client.c
+OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
+LIB_PATH = include/libft/
+LIBFT = include/libft/libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-LIBFT_PATH = libft/
-INCLUDE = libft.a
 
-$(NAME): $(OBJS)
-	make -C $(LIBFT_PATH) $(INCLUDE)
-	$(CC) $(CFLAGS) $(SRC_SERVER) -o $(SERVER) $(LIBFT_PATH)$(INCLUDE)
-	$(CC) $(CFLAGS) $(SRC_CLIENT) -o $(CLIENT) $(LIBFT_PATH)$(INCLUDE)
+$(NAME): $(SERVER) $(CLIENT)
+
+$(SERVER): $(LIBFT) $(OBJ_SERVER)
+	$(CC) $(CFLAGS) $^ -o $@ $(LIBFT)
+
+$(CLIENT): $(LIBFT) $(OBJ_CLIENT)
+	$(CC) $(CFLAGS) $^ -o $@ $(LIBFT)
+
+$(LIBFT):
+	make -C $(LIB_PATH) all
 
 all: $(NAME)
 
 clean:
-	rm -f $(SRC_PATH)/*.o
-	make -C $(LIBFT_PATH) clean
+	rm -f src/*.o
+	make -C $(LIB_PATH) clean
 
 fclean: clean
 	rm -f $(SERVER)
 	rm -f $(CLIENT)
-	rm -f $(LIBFT_PATH)$(INCLUDE)
+	rm -f $(LIBFT)
 
 re: fclean all
 
