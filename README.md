@@ -6,7 +6,7 @@
 
 1. Inside minitalk’s repository type `make` and hit `Enter` to create server’s and client’ executables.
 
-2. Type `./server` and Enter to initialize server. It will print his PID and wait to receive a message.
+2. Type `./server` and press `Enter` to initialize the server. It will print his PID and wait to receive a message from a client.
 
 3. In another tab or terminal type `./client [server’s PID] [message]` to send a message to the server.
 
@@ -14,4 +14,4 @@
 
 5. Press `Ctrl + C` to terminate the server’s process.
 
-**What I learned with this project**: Data exchange between process using UNIX signals; a set of standard functions to handle signals and processes; bitwise operations.
+**What I learned with this project**: Data exchange between process using UNIX signals; a set of C standard functions to handle signals and processes; bitwise operations.
