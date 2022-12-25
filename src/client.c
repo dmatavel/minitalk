@@ -6,7 +6,7 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:36:07 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/12/20 18:01:33 by dmatavel         ###   ########.fr       */
+/*   Updated: 2022/12/25 12:29:50 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,23 @@ void	send_signals(int n, int serv_pid);
 int	main(int argc, char *argv[])
 {
 	int		serv_pid;
+	int		i;
 
 	if (argc != 3)
 	{
 		ft_printf("Please, insert Server's PID and a valid message.\n");
 		exit(EXIT_FAILURE);
-	}	
+	}
+	i = 0;
+	while (argv[1][i] != '\0')
+	{
+		if (!ft_isdigit(argv[1][i]))
+		{
+			ft_printf("PIDs are composed of digits only.\n");
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
 	serv_pid = ft_atoi(argv[1]);
 	send_msg(argv[2], serv_pid);
 	return (EXIT_SUCCESS);
