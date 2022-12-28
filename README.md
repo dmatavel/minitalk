@@ -1,12 +1,12 @@
 # minitalk
 
-**Description**: The aim of this project is to create two programs (a client and a  server) and stablish a communication between then. This data exchange is made using UNIX signals. The server is started first, and it prints in the standard output his PID (Process ID). The client has to be started with two arguments: the server’s PID and a string with the message that will be send by the client. It can be a single word or multiple words between double quotes. The server needs to be capable of receive multiple messages without stuck or shutdown.
+**Description**: The aim of this project is to create two programs (a client and a  server) and stablish a communication between then. This data exchange is made using UNIX signals. The server is started first, and it prints in the standard output his PID (Process ID). The client has to be started with two arguments: the server’s PID and a string with the message that will be send by the client (it can be a single word or multiple words between double quotes). The server needs to be capable of receive multiple messages without stuck or shutdown and it should print the received message as soon as possible.
 
 **Instructions**:
 
-1. Inside minitalk’s repository type `make` and hit `Enter` to create server’s and client’ executables.
+1. Inside minitalk’s directory type `make` and hit `Enter` to create server’s and client’ executables.
 
-2. Type `./server` and press `Enter` to initialize the server. It will print his PID and wait to receive a message from a client.
+2. Type `./server` and press `Enter` to initialize the server. It will print its PID and wait to receive a message from a client.
 
 3. In another tab or terminal type `./client [server’s PID] [message]` to send a message to the server.
 
