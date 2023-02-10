@@ -5,8 +5,8 @@ OBJ_SERVER = $(SRC_SERVER:.c=.o)
 CLIENT = client
 SRC_CLIENT = src/client.c
 OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
-LIB_PATH = include/libft/
-LIBFT = include/libft/libft.a
+LIB_PATH = libft/
+LIBFT = libft/libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
