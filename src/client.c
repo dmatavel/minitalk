@@ -6,11 +6,11 @@
 /*   By: dmatavel <dmatavel@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:36:07 by dmatavel          #+#    #+#             */
-/*   Updated: 2022/12/25 12:29:50 by dmatavel         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:58:15 by dmatavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft/include/libft.h"
+#include "../libft/include/libft.h"
 
 void	send_msg(char *msg, int serv_pid);
 void	send_signals(int n, int serv_pid);
