@@ -4,6 +4,8 @@
 
 **Instructions**:
 
+Download and extract the [project's folder](https://github.com/dmatavel/minitalk/archive/refs/heads/main.zip).
+
 1. Inside minitalk’s directory type `make` and hit `Enter` to create server’s and client’ executables.
 
 2. Type `./server` and press `Enter` to initialize the server. It will print its PID and wait to receive a message from a client.
