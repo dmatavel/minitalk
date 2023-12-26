@@ -1,19 +1,75 @@
+
 # minitalk
 
-**Description**: The aim of this project is to create two programs (a client and a  server) and stablish a communication between then. This data exchange is made using UNIX signals. The server is started first, and it prints in the standard output his PID (Process ID). The client has to be started with two arguments: the server’s PID and a string with the message that will be send by the client (it can be a single word or multiple words between double quotes). The server needs to be capable of receive multiple messages without stuck or shutdown and it should print the received message as soon as possible.
+## Name
 
-**Instructions**:
+minitalk - communication between a client and server with UNIX signals.
 
-Download and extract the [project's folder](https://github.com/dmatavel/minitalk/archive/refs/heads/main.zip).
+## **Synopsis**
 
-1. Inside minitalk’s directory type `make` and hit `Enter` to create server’s and client’ executables.
+**server** - prints server's PID in stdout.
+**client** [*server's_pid*] [*string*].
 
-2. Type `./server` and press `Enter` to initialize the server. It will print its PID and wait to receive a message from a client.
+## Description
 
-3. In another tab or terminal type `./client [server’s PID] [message]` to send a message to the server.
+minitalk creates two programs - a **client** and a **server** - and establishes a communication between then. This data exchange is made using UNIX signals. The server must be started first, and it prints in stdout (standard output) his PID (process ID). The client has to be started with two arguments: [*server’s PID*] and a [*string*] with the message that will be send by the client. It can be a single word or multiple words between double quotes. After that, server should print the received message in stdout.
 
-4. The server should print the message and wait for any future messages.
+## **Download**
 
-5. Press `Ctrl + C` to terminate the server’s process.
+You can download the source code [here](https://github.com/dmatavel/minitalk/archive/refs/heads/main.zip) or click the "Code" button at the upper-right corner of this repository, selecting "Download Zip".
 
-**What I learned with this project**: Data exchange between process using UNIX signals; a set of C standard functions to handle signals and processes; bitwise operations.
+Alternatively, you can clone this repository in your machine. Simple copy and paste or write the following command in your terminal:
+
+    cd ~/Downloads/ && git clone https://github.com/dmatavel/minitalk.git
+
+It assumes that you have [Git](https://git-scm.com/) installed and a **Downloads** folder in your **Home** directory. If you face any error, check this requirements.
+
+## Compilation and execution
+
+If you downloaded the zip file, extract it and enter the **minitalk-main** folder. With a right click on your file browser, select the option **Open in Terminal** or something like that. If you've cloned the repository, simple go inside the program's directory. Copy and paste or write in your terminal:
+
+    make minitalk
+
+Two executable will be created: **server** and **client**. After that, run the server's program with:
+
+	  ./server
+  
+  And the client's program with:
+
+	./client [server's_pid] [message]
+
+## Bugs and contribution
+
+Report bugs sending an email for matavelidanilo@gmail.com or opening an issue on the project's GitHub repository. Pull requests with fixes, features or any other upgrades are highly welcome.  
+
+## Supported OSs
+
+file_editor was developed and tested in a GNU/Linux Debian based system (Ubuntu 22.04 LTS). 
+
+## 42 cursus students
+
+minitalk was first developed as a 42 cursus project. If you are a student at 42, please be aware that this project may have been modified in relation to the project that was submitted for evaluation during the course. You can take it as a reference for your studies, but not as a parameter for correcting your project.
+
+## License
+
+This is a free work delivered for educational purposes during the main course
+at 42 <42.rio>.
+
+Feel free to use it, change it, give advices, send me a pull request or
+just slack me if you want to share some thoughts.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
